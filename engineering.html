@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subcontract Engineering | Ryloc Parts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body class="bg-black text-white overflow-x-hidden">
+    
+    <div id="app"></div>
+
+    <script type="module">
+      import { renderNavbar, renderFooter, initLayout } from './src/components/layout.js';
+
+      document.getElementById('app').innerHTML = `
+        ${renderNavbar('engineering')}
+        
+        <!-- Hero -->
+        <header class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+          <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover brightness-50">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
+          </div>
+          <div class="relative z-10 text-center max-w-4xl px-4 pt-safe">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif mb-4 sm:mb-6">Subcontract Engineering</h1>
+            <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+              Leverage our expertise in automotive electronics and mechanical design for your custom projects.
+            </p>
+          </div>
+        </header>
+
+        <div class="max-w-7xl mx-auto px-4 md:px-12 py-16 sm:py-24">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            
+            <!-- Services Info -->
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-serif mb-4 sm:mb-6">Engineering Services</h2>
+              <p class="text-gray-400 mb-8 leading-relaxed">
+                While our primary focus is classic Mercedes-Benz restoration, we offer subcontract engineering services for specialized automotive projects. From reverse engineering obsolete components to designing custom electronic solutions, our team can help bring your vision to life.
+              </p>
+              
+              <h3 class="text-xl font-serif mb-4">Capabilities</h3>
+              <ul class="space-y-4 mb-12 text-gray-300">
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-mb-blue mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <div>
+                    <strong class="text-white block">PCB Design & Prototyping</strong>
+                    Modernizing legacy circuits with reliable, efficient layouts.
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-mb-blue mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <div>
+                    <strong class="text-white block">Reverse Engineering</strong>
+                    Recreating unavailable parts from broken samples or diagrams.
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-mb-blue mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <div>
+                    <strong class="text-white block">Small Batch Manufacturing</strong>
+                    Production runs for niche automotive communities.
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-mb-dark-grey p-6 sm:p-8 rounded border border-white/10">
+              <h3 class="text-xl sm:text-2xl font-serif mb-5 sm:mb-6">Start a Project</h3>
+              <form class="space-y-5 sm:space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                  <div>
+                    <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Name</label>
+                    <input type="text" class="w-full bg-black/50 border border-white/10 px-4 py-3.5 min-h-[44px] text-white focus:border-mb-blue focus:outline-none transition-colors">
+                  </div>
+                  <div>
+                    <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Email</label>
+                    <input type="email" class="w-full bg-black/50 border border-white/10 px-4 py-3.5 min-h-[44px] text-white focus:border-mb-blue focus:outline-none transition-colors">
+                  </div>
+                </div>
+                
+                <div>
+                  <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Project Type</label>
+                  <select class="w-full bg-black/50 border border-white/10 px-4 py-3.5 min-h-[44px] text-white focus:border-mb-blue focus:outline-none transition-colors">
+                    <option>Custom Engineering</option>
+                    <option>Part Recreation Idea</option>
+                    <option>Bulk Order Inquiry</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Description</label>
+                  <textarea rows="5" class="w-full bg-black/50 border border-white/10 px-4 py-3.5 min-h-[120px] text-white focus:border-mb-blue focus:outline-none transition-colors" placeholder="Describe your project or the part you need recreated..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full btn-primary min-h-[48px]">Submit Request</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+        
+        <!-- Part Idea Submission -->
+        <section id="ideas" class="py-24 bg-white text-black">
+          <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-serif mb-6">Have a Part Idea?</h2>
+            <p class="text-gray-600 mb-10 text-lg">
+              Is there a specific part for your classic Mercedes that is impossible to find or always breaks? Tell us about it. We prioritize our product roadmap based on community needs.
+            </p>
+            <a href="mailto:contact@rylocparts.com?subject=New%20Part%20Idea" class="inline-block border-b-2 border-black pb-1 text-xl font-serif hover:text-gray-600 hover:border-gray-600 transition-colors">Email us your suggestion</a>
+          </div>
+        </section>
+
+        ${renderFooter()}
+      `;
+
+      initLayout();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Ryloc Parts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body class="bg-black text-white overflow-x-hidden">
+    
+    <div id="app"></div>
+
+    <script type="module">
+      import { renderNavbar, renderFooter, initLayout } from './src/components/layout.js';
+
+      document.getElementById('app').innerHTML = `
+        ${renderNavbar('about')}
+        
+        <div class="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 px-4 md:px-12 max-w-4xl mx-auto min-h-screen">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif mb-8 sm:mb-12 text-center">Our Story</h1>
+          
+          <div class="prose prose-invert prose-lg mx-auto">
+            <p class="text-base sm:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
+              Ryloc Parts was born from a simple frustration: classic Mercedes-Benz vehicles are built like tanks, but their electronics and certain mechanical components were the Achilles' heel.
+            </p>
+            
+            <div class="aspect-video bg-gray-900 mb-12 rounded overflow-hidden border border-white/10">
+              <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover opacity-80">
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-serif text-white mb-4 sm:mb-6">The "Longlasting but Breaks" Paradox</h2>
+            <p class="text-gray-400 mb-6">
+              Mercedes-Benz in the 70s, 80s, and 90s engineered cars to last a million miles. However, shortcuts were taken with certain materials—biodegradable wiring harnesses, brittle plastics in odometer gears, and capacitors that leak over time. These small failures turn a reliable daily driver into a garage queen.
+            </p>
+            <p class="text-gray-400 mb-12">
+              We started by fixing our own cars. When we realized the "replacement" parts on the market were often worse quality than the broken originals, we decided to engineer our own.
+            </p>
+
+            <h2 class="text-2xl sm:text-3xl font-serif text-white mb-4 sm:mb-6">Our Mission</h2>
+            <p class="text-gray-400 mb-6">
+              To be the definitive source for high-quality, re-engineered components that keep classic Mercedes-Benz vehicles on the road. We don't just copy the original part; we analyze why it failed and improve the design using modern materials and manufacturing techniques.
+            </p>
+            <p class="text-gray-400 mb-12">
+              We want your classic to function as if it just rolled off the showroom floor—today, and for the next 30 years.
+            </p>
+          </div>
+        </div>
+
+        ${renderFooter()}
+      `;
+
+      initLayout();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details | Ryloc Parts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body class="bg-black text-white overflow-x-hidden">
+    
+    <div id="app"></div>
+
+    <script type="module">
+      import { renderNavbar, renderFooter, initLayout } from './src/components/layout.js';
+      import { products } from './src/data/products.js';
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = parseInt(urlParams.get('id'));
+      const product = products.find(p => p.id === productId);
+
+      if (!product) {
+        document.getElementById('app').innerHTML = `
+          ${renderNavbar()}
+          <div class="h-screen flex flex-col items-center justify-center text-center px-4">
+            <h1 class="text-4xl font-serif mb-4">Product Not Found</h1>
+            <p class="text-gray-400 mb-8">The part you are looking for does not exist or has been removed.</p>
+            <a href="/parts.html" class="btn-primary">Return to Shop</a>
+          </div>
+          ${renderFooter()}
+        `;
+      } else {
+        document.getElementById('app').innerHTML = `
+          ${renderNavbar()}
+          
+          <div class="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 px-4 md:px-12 max-w-7xl mx-auto min-h-screen">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+              
+              <!-- Product Image -->
+              <div class="relative group">
+                <div class="aspect-square bg-gray-900 overflow-hidden rounded-lg border border-white/10">
+                  <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                </div>
+              </div>
+
+              <!-- Product Info -->
+              <div class="flex flex-col justify-center">
+                <span class="text-mb-blue uppercase tracking-widest text-xs font-bold mb-4">${product.category}</span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif mb-4 sm:mb-6 leading-tight">${product.name}</h1>
+                <p class="text-xl sm:text-2xl font-medium mb-6 sm:mb-8">$${product.price.toFixed(2)}</p>
+                
+                <div class="prose prose-invert text-gray-400 mb-10 leading-relaxed">
+                  <p>${product.description}</p>
+                </div>
+
+                <div class="mb-10">
+                  <h3 class="text-sm uppercase tracking-widest text-white mb-4 border-b border-white/10 pb-2">Features</h3>
+                  <ul class="space-y-2 text-gray-400 text-sm">
+                    ${product.features.map(feature => `<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-mb-blue rounded-full"></span>${feature}</li>`).join('')}
+                  </ul>
+                </div>
+
+                <div class="mb-10">
+                  <h3 class="text-sm uppercase tracking-widest text-white mb-4 border-b border-white/10 pb-2">Fits Models</h3>
+                  <div class="flex flex-wrap gap-2">
+                    ${product.fits.map(model => `<span class="bg-white/10 px-3 py-1 rounded text-xs text-gray-300 border border-white/5">${model}</span>`).join('')}
+                  </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">
+                  <button onclick="window.addToCart(${product.id})" class="flex-1 btn-primary text-center py-4 text-base min-h-[48px]">Add to Cart</button>
+                  ${product.installGuide ? `
+                    <a href="${product.installGuide}" target="_blank" class="flex-1 btn-outline text-center py-4 text-base flex items-center justify-center gap-2 min-h-[48px]">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                      Watch Install Guide
+                    </a>
+                  ` : ''}
+                </div>
+
+                <div class="bg-white/5 p-6 rounded border border-white/10 text-sm text-gray-400">
+                  <p class="mb-2"><strong class="text-white">Core Exchange Program:</strong></p>
+                  <p>Send us your old part for a partial refund. We'll provide a shipping label with your order. <a href="#" class="text-mb-blue underline">Learn more</a>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          ${renderFooter()}
+        `;
+      }
+
+      initLayout();
+    </script>
+  </body>
+</html>

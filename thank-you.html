@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | Ryloc Parts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body class="bg-black text-white overflow-x-hidden">
+    
+    <div id="app"></div>
+
+    <script type="module">
+      import { renderNavbar, renderFooter, initLayout } from './src/components/layout.js';
+
+      document.getElementById('app').innerHTML = `
+        ${renderNavbar()}
+        
+        <div class="min-h-screen flex flex-col items-center justify-center text-center px-4 py-24 max-w-2xl mx-auto">
+          <div class="mb-6 sm:mb-8">
+             <img src="/logo.png" alt="Ryloc Parts" class="h-12 sm:h-16 w-auto mx-auto invert brightness-0 filter" style="filter: brightness(0) invert(1);">
+          </div>
+          
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif mb-4 sm:mb-6">Thank you for choosing Ryloc!</h1>
+          
+          <p class="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
+            Ensuring long lasting parts to keep your classic Mercedes-Benz on the road.
+          </p>
+          
+          <div class="bg-white/5 border border-white/10 p-5 sm:p-6 rounded-lg w-full mb-8 sm:mb-10">
+            <p class="text-gray-400 text-sm">
+              Email <a href="mailto:alex@rylocparts.com" class="text-mb-blue hover:text-white transition-colors">alex@rylocparts.com</a> for questions or help.
+            </p>
+          </div>
+
+          <a href="/index.html" class="btn-primary w-full sm:w-auto min-h-[48px] flex items-center justify-center">Return Home</a>
+        </div>
+
+        ${renderFooter()}
+      `;
+
+      initLayout();
+    </script>
+  </body>
+</html>
