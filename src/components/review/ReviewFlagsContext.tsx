@@ -46,7 +46,7 @@ export function ReviewFlagsProvider({
 
   useEffect(() => {
     const stored = window.localStorage.getItem(VISIBILITY_KEY);
-    setVisible(stored === null ? true : stored === "true");
+    setVisible(stored === "true");
     const savedName = loadReviewerName().trim();
     setReviewerNameState(savedName || DEFAULT_REVIEWER_NAME);
     setHydrated(true);
