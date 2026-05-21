@@ -19,9 +19,9 @@ export function partitionReviewFlags(flags: ReviewFlag[]) {
 }
 
 export function isReviewFlagsUiEnabled(): boolean {
-  if (process.env.VITE_SHOW_REVIEW_FLAGS === "false") return false;
-  if (process.env.VITE_SHOW_REVIEW_FLAGS === "true") return true;
-  return process.env.NODE_ENV === "development";
+  if (import.meta.env.VITE_SHOW_REVIEW_FLAGS === "false") return false;
+  if (import.meta.env.VITE_SHOW_REVIEW_FLAGS === "true") return true;
+  return import.meta.env.DEV;
 }
 
 export function getOpenFlags(review: ReviewFlagsContent): ReviewFlag[] {

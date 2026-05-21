@@ -2,19 +2,15 @@ import path from "path";
 import { fileURLToPath } from "url";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig } from "vite";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, ".", "");
-  return {
-    plugins: [react(), tailwindcss()],
-    define: {
-      "process.env.NODE_ENV": JSON.stringify(mode),
-      "process.env.VITE_SHOW_REVIEW_FLAGS": JSON.stringify(
-        env.VITE_SHOW_REVIEW_FLAGS ?? (mode === "development" ? "true" : ""),
-      ),
+export default defineConfig({
+    plugins: [react({ jsxRuntime: "automatic" })],
+    esbuild: {
+      jsx: "automatic",
+      jsxDev: false,
     },
     resolve: {
       alias: {
@@ -35,5 +31,4 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-  };
 });
