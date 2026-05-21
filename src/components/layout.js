@@ -95,6 +95,7 @@ export function renderNavbar(activePage = 'home') {
 
 export function renderFooter() {
   return `
+    <div id="gc-review-page-slot"></div>
     <footer class="bg-mb-dark-grey text-white pt-20 pb-10 border-t border-white/10">
       <div class="max-w-7xl mx-auto px-4 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div>

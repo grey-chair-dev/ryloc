@@ -16,15 +16,17 @@
 
     <script type="module">
       import { renderNavbar, renderFooter, initLayout } from './src/components/layout.js';
-      import { products } from './src/data/products.js';
+      import { HERO_IMAGE, PLACEHOLDER_IMAGE } from './src/data/images.js';
 
       document.getElementById('app').innerHTML = `
         ${renderNavbar('home')}
         
+        <section id="page-review" data-review-slot="inner" class="review-inline-panel page-x mx-auto max-w-6xl pt-28 sm:pt-32 md:pt-36 pb-2" aria-label="Review questions for homepage"></section>
+
         <!-- Hero Section -->
-        <header class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+        <header id="hero" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
           <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=2070&auto=format&fit=crop" alt="Classic Mercedes Interior" class="w-full h-full object-cover brightness-50 animate-scale-slow">
+            <img src="${HERO_IMAGE}" alt="Classic Mercedes Interior" class="w-full h-full object-cover brightness-50 animate-scale-slow">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
           </div>
           
@@ -43,8 +45,10 @@
           </div>
         </header>
 
+        <section id="hero-review" data-review-slot="inner" class="review-inline-panel" aria-label="Review questions for hero"></section>
+
         <!-- Fits These Cars Section -->
-        <section class="py-12 sm:py-20 bg-mb-dark-grey border-b border-white/10">
+        <section id="models" class="py-12 sm:py-20 bg-mb-dark-grey border-b border-white/10">
           <div class="max-w-7xl mx-auto px-4 md:px-12">
             <h3 class="text-center text-xl sm:text-2xl font-serif mb-8 sm:mb-12">Engineered For Legends</h3>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
@@ -69,12 +73,12 @@
         </section>
 
         <!-- Top Seller Feature -->
-        <section class="py-16 sm:py-24 lg:py-32 relative overflow-hidden">
+        <section id="featured" class="py-16 sm:py-24 lg:py-32 relative overflow-hidden">
           <div class="max-w-7xl mx-auto px-4 md:px-12 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div class="relative order-2 lg:order-1">
                 <div class="absolute -top-20 -left-20 w-64 h-64 bg-mb-blue/20 rounded-full blur-[100px]"></div>
-                <img src="https://images.unsplash.com/photo-1592853625597-7d17be820d0c?q=80&w=2070&auto=format&fit=crop" alt="Tachometer" class="relative z-10 rounded shadow-2xl border border-white/10 w-full max-w-md mx-auto lg:mx-0 transform hover:scale-105 transition-transform duration-700">
+                <img src="${PLACEHOLDER_IMAGE}" alt="Tachometer placeholder" class="relative z-10 rounded shadow-2xl border border-white/10 w-full max-w-md mx-auto lg:mx-0 transform hover:scale-105 transition-transform duration-700">
                 <!-- Overlapping Element (desktop) -->
                 <div class="absolute -bottom-10 -right-10 bg-black border border-white/20 p-6 max-w-xs z-20 shadow-xl hidden md:block">
                   <h4 class="text-xl font-serif mb-2">Best Seller</h4>
@@ -108,21 +112,21 @@
           <div class="max-w-7xl mx-auto px-4 md:px-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               <!-- Upcoming Releases -->
-              <div class="md:col-span-2 relative group overflow-hidden h-64 sm:h-80 md:h-96 bg-gray-100">
-                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div id="upcoming" class="md:col-span-2 relative group overflow-hidden h-64 sm:h-80 md:h-96 bg-gray-100">
+                <img src="${PLACEHOLDER_IMAGE}" alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors p-8 flex flex-col justify-end">
-                  <span class="text-white/80 uppercase tracking-widest text-xs mb-2">Coming Soon</span>
-                  <h3 class="text-3xl font-serif text-white mb-4">W140 Soft Close Pump Rebuild</h3>
-                  <a href="#" class="text-white border-b border-white/50 pb-1 w-max hover:border-white">Join Waitlist</a>
+                  <span class="text-white/80 uppercase tracking-widest text-xs mb-2">Placeholder · Layout sample</span>
+                  <h3 class="text-3xl font-serif text-white mb-4">Upcoming Part (example title)</h3>
+                  <a href="#" class="text-white/60 border-b border-white/30 pb-1 w-max cursor-default" aria-disabled="true">Waitlist (not wired)</a>
                 </div>
               </div>
 
               <!-- Accessories -->
-              <div class="relative group overflow-hidden h-64 sm:h-80 md:h-96 bg-gray-100">
-                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1780&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div id="merchandise" class="relative group overflow-hidden h-64 sm:h-80 md:h-96 bg-gray-100">
+                <img src="${PLACEHOLDER_IMAGE}" alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors p-8 flex flex-col justify-end">
-                  <span class="text-white/80 uppercase tracking-widest text-xs mb-2">Merchandise</span>
-                  <h3 class="text-3xl font-serif text-white mb-4">Ryloc Apparel</h3>
+                  <span class="text-white/80 uppercase tracking-widest text-xs mb-2">Placeholder · Layout sample</span>
+                  <h3 class="text-3xl font-serif text-white mb-4">Merchandise (example)</h3>
                   <a href="/parts.html?category=Merchandise" class="text-white border-b border-white/50 pb-1 w-max hover:border-white">Shop Now</a>
                 </div>
               </div>
@@ -131,7 +135,7 @@
         </section>
 
         <!-- Stay Connected -->
-        <section class="py-16 sm:py-24 bg-mb-dark-grey border-t border-white/10">
+        <section id="newsletter" class="py-16 sm:py-24 bg-mb-dark-grey border-t border-white/10">
           <div class="max-w-3xl mx-auto px-4 text-center">
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif mb-4 sm:mb-6">Stay Connected</h2>
             <p class="text-gray-400 mb-8 sm:mb-10 text-sm sm:text-base">
@@ -149,5 +153,7 @@
 
       initLayout();
     </script>
+    <div id="review-root"></div>
+    <script type="module" src="/src/review-bootstrap.tsx"></script>
   </body>
 </html>

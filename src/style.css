@@ -135,3 +135,132 @@ h1, h2, h3, h4, h5, h6 {
 .img-zoom-container:hover img {
   transform: scale(1.05);
 }
+
+/* Grey Chair review flags */
+@layer utilities {
+  .page-x {
+    @apply px-4 md:px-8;
+  }
+
+  .text-primary { @apply text-amber-200; }
+  .text-secondary { @apply text-amber-400/90; }
+  .text-on-primary { @apply text-black; }
+  .text-on-secondary { @apply text-black; }
+  .text-on-surface { @apply text-white; }
+  .text-on-surface-variant { @apply text-neutral-400; }
+
+  .bg-primary { @apply bg-amber-300; }
+  .bg-secondary { @apply bg-amber-500; }
+  .bg-surface { @apply bg-neutral-900; }
+  .bg-surface-container-low { @apply bg-neutral-900/95; }
+  .bg-surface-container-lowest { @apply bg-neutral-950; }
+
+  .border-outline-variant { @apply border-neutral-700; }
+
+  .type-label-lg { @apply text-xs font-semibold uppercase tracking-widest; }
+  .type-headline-lg { @apply font-serif text-3xl md:text-4xl font-light; }
+  .type-headline-sm { @apply font-serif text-xl font-medium; }
+  .type-body-lg { @apply text-base leading-relaxed; }
+}
+
+/* Grey Chair review UI — static HTML pages */
+:root {
+  --gc-nav-height: 7rem;
+  --gc-review-chrome-h: 2.75rem;
+}
+
+body.gc-review-visible #navbar {
+  z-index: 60;
+}
+
+.gc-review-top {
+  top: var(--gc-nav-height);
+}
+
+body.gc-review-visible #hero {
+  box-sizing: border-box;
+  padding-top: calc(var(--gc-nav-height) + var(--gc-review-chrome-h) + 0.75rem);
+}
+
+.review-inline-panel:not(:has(.review-flag-anchor-host)) {
+  display: none;
+}
+
+.review-page-panel {
+  border-radius: 0.75rem;
+  border: 2px solid rgb(245 158 11 / 0.35);
+  background: #0a0a0a;
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.review-inline-panel:has(.review-hero-host) {
+  scroll-margin-top: calc(var(--gc-nav-height) + var(--gc-review-chrome-h) + 1rem);
+}
+
+.review-hero-details {
+  border-top: 1px solid rgb(245 158 11 / 0.2);
+  border-bottom: 1px solid rgb(245 158 11 / 0.2);
+  background: #0a0a0a;
+}
+
+.review-hero-details > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.875rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(251 191 36 / 0.9);
+}
+
+.review-hero-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.review-hero-details > summary::after {
+  content: "▸";
+  float: right;
+  color: rgb(163 163 163);
+  transition: transform 0.15s ease;
+}
+
+.review-hero-details[open] > summary::after {
+  transform: rotate(90deg);
+}
+
+.review-hero-details__body {
+  padding: 0 1rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .review-hero-details > summary,
+  .review-hero-details__body {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+[id$="-review"],
+[data-review-flag-ids] {
+  scroll-margin-top: calc(var(--gc-nav-height) + var(--gc-review-chrome-h) + 0.5rem);
+}
+
+/* Anchors injected before page sections (e.g. About, Contact) */
+body.gc-review-visible #app > .review-flag-anchor-host--before-section {
+  padding-top: calc(var(--gc-nav-height) + var(--gc-review-chrome-h) + 0.75rem);
+}
+
+body.gc-review-visible .review-flag-anchor-host--inner {
+  margin-bottom: 1.5rem;
+}
+
+body.gc-review-visible #app > .review-flag-anchor-host--before-section:last-of-type,
+body.gc-review-visible .review-flag-anchor-host {
+  margin-bottom: 1rem;
+}
+
+body.gc-review-visible {
+  padding-bottom: 5.5rem;
+}
+

@@ -1,0 +1,341 @@
+{
+  "title": "Questions for Ben",
+  "intro": "Ryloc Parts will be an ecommerce store for classic Mercedes-Benz parts. Everything you see in this preview is placeholder—product names, prices, photos, \"coming soon\" tiles, chassis lists, copy, and links are filler to show layout, not real offers. Tell us what to replace them with (or what to hide) before launch. Toggle bottom-right or open /review.",
+  "actionItemsIntro": "Ecommerce launch decisions for Grey Chair—these block taking real orders.",
+  "flags": [
+    {
+      "id": "domain-purchaser",
+      "kind": "action",
+      "status": "open",
+      "priority": "high",
+      "page": "Launch",
+      "href": "/review",
+      "question": "Who is buying and registering the store domain (e.g. rylocparts.com)—you, Grey Chair, or someone else? Is the name already reserved?"
+    },
+    {
+      "id": "launch-access",
+      "kind": "action",
+      "status": "open",
+      "priority": "high",
+      "page": "Launch",
+      "href": "/review",
+      "question": "We need domain/DNS access to launch the store. Send registrar logins to Will here, say you'll send them another way, or check \"I don't have access yet\" if that applies."
+    },
+    {
+      "id": "checkout-payment",
+      "kind": "action",
+      "status": "open",
+      "priority": "high",
+      "page": "Launch",
+      "href": "/review",
+      "question": "The store must accept payment online. What do you want at launch—Stripe, PayPal, Shopify Payments, Square—or phone/email orders only until later?"
+    },
+    {
+      "id": "inventory-source",
+      "kind": "action",
+      "status": "open",
+      "priority": "high",
+      "page": "Launch",
+      "href": "/review",
+      "question": "Where will live product data live—spreadsheet we import, Shopify, sync from eBay, or you update listings in a simple admin? How do you want to manage stock counts?"
+    },
+    {
+      "id": "catalog-handoff",
+      "kind": "action",
+      "status": "open",
+      "priority": "high",
+      "page": "Launch",
+      "href": "/review",
+      "question": "Three sample Mercedes parts are in the preview (tachometer assembly, cluster PCB, merch). When you're ready to go live, how will you send the real catalog—SKU list, eBay export, photos per part, or walk through on a call?"
+    },
+    {
+      "id": "shipping-fulfillment",
+      "kind": "action",
+      "status": "open",
+      "priority": "high",
+      "page": "Launch",
+      "href": "/review",
+      "question": "How will you ship orders—flat rate, calculated by weight/zone, local pickup, or freight for heavy assemblies? Who packs and ships (you, 3PL, Grey Chair setup only)?"
+    },
+    {
+      "id": "ecommerce-platform-path",
+      "status": "open",
+      "priority": "high",
+      "page": "Whole site",
+      "href": "/parts",
+      "question": "This build is a custom Vite storefront (cart in browser today). For launch, stay on this custom shop, move catalog/checkout to Shopify, or sell on-site plus eBay—what's the plan?"
+    },
+    {
+      "id": "placeholder-products",
+      "status": "open",
+      "priority": "high",
+      "page": "Shop",
+      "href": "/parts",
+      "question": "Sample parts, prices, and fitment are placeholders—not buyable inventory. At launch: publish only SKUs you have in stock, show \"out of stock\" until ready, or hide the shop until the catalog is loaded?"
+    },
+    {
+      "id": "product-photos",
+      "status": "open",
+      "priority": "high",
+      "page": "Shop",
+      "href": "/parts",
+      "question": "Every listing needs trustworthy photos (angle, label, installed shot if possible). Will you shoot/send images per SKU, or should Grey Chair source or retouch placeholders?"
+    },
+    {
+      "id": "fitment-accuracy",
+      "status": "open",
+      "priority": "high",
+      "page": "Shop",
+      "href": "/product",
+      "question": "Fitment lines on sample parts (W123, W124, etc.) are placeholders. How should real listings show fitment—your verified list per SKU, OEM numbers, year/engine notes, or \"contact us to confirm\"?"
+    },
+    {
+      "id": "pricing-tax",
+      "status": "open",
+      "priority": "high",
+      "page": "Shop",
+      "href": "/parts",
+      "question": "All prices in the preview are placeholders. At launch: your retail prices, match eBay, or other? Do you need sales tax (which states), shown with or without tax?"
+    },
+    {
+      "id": "core-exchange-program",
+      "status": "open",
+      "priority": "high",
+      "page": "Shop",
+      "href": "/parts",
+      "question": "Core exchange text on product pages is placeholder. When you have a real program, what are the rules—core charge, return window, return shipping, refund timing—and should checkout show core + price separately?"
+    },
+    {
+      "id": "cart-checkout-today",
+      "status": "open",
+      "priority": "high",
+      "page": "Cart",
+      "href": "/",
+      "question": "Cart is browser-only; Checkout clears the cart and shows thank-you with no payment, email, or order number. Disable \"Checkout\" until Stripe (or your choice) is live, or leave as preview-only?"
+    },
+    {
+      "id": "order-notifications",
+      "status": "open",
+      "priority": "high",
+      "page": "Launch",
+      "href": "/review",
+      "question": "When orders start, who gets notified (email addresses), and do customers need an order confirmation + shipping tracking email?"
+    },
+    {
+      "id": "returns-warranty",
+      "status": "open",
+      "priority": "high",
+      "page": "Shop",
+      "href": "/about",
+      "question": "The 1-year warranty on sample listings is placeholder copy. What are your real return, exchange, and warranty rules for assemblies vs boards vs merch?"
+    },
+    {
+      "id": "shipping-returns-page",
+      "status": "open",
+      "priority": "high",
+      "page": "Shop",
+      "href": "/about",
+      "question": "Footer \"Shipping & Returns\" is a dead link. Send policy copy (processing time, carriers, international, damaged-in-transit) so we can publish before launch."
+    },
+    {
+      "id": "ebay-channel",
+      "status": "open",
+      "priority": "medium",
+      "page": "Shop",
+      "href": "/parts",
+      "question": "You already sell on eBay (footer link). Should rylocparts.com be the primary store with eBay secondary, keep both in sync, or redirect some SKUs to eBay only?"
+    },
+    {
+      "id": "catalog-categories",
+      "status": "open",
+      "priority": "medium",
+      "page": "Shop",
+      "href": "/parts",
+      "question": "Shop filters today: Full Assembly, Individual Boards, Merchandise. What categories will you actually sell—electronics, mechanical, interior, fluids, tools—and any subcategories by chassis?"
+    },
+    {
+      "id": "product-fields",
+      "status": "open",
+      "priority": "medium",
+      "page": "Product",
+      "href": "/product",
+      "question": "For each sellable part, what must the product page include—OEM/part number, weight for shipping, stock qty, install PDF/video, core charge, compatibility notes?"
+    },
+    {
+      "id": "install-guides",
+      "status": "open",
+      "priority": "medium",
+      "page": "Product",
+      "href": "/product",
+      "question": "Install Guide buttons use placeholder YouTube links. Will you provide video or PDF guides per SKU (recommended for returns reduction)?"
+    },
+    {
+      "id": "out-of-stock-backorder",
+      "status": "open",
+      "priority": "medium",
+      "page": "Shop",
+      "href": "/parts",
+      "question": "For parts you build in batches (e.g. tachometers), show \"In stock,\" \"Backorder,\" or \"Notify me when available\" on the storefront?"
+    },
+    {
+      "id": "home-hero-ecommerce",
+      "status": "open",
+      "priority": "medium",
+      "page": "Home",
+      "href": "/#hero-review",
+      "question": "Hero headline and subcopy are placeholder messaging. What should visitors understand in 5 seconds (e.g. classic Mercedes parts, sold online)—and is \"Keep The Classics On The Road\" close, or send replacement lines?"
+    },
+    {
+      "id": "home-hero-image",
+      "status": "open",
+      "priority": "medium",
+      "page": "Home",
+      "href": "/#hero-review",
+      "question": "Hero photo is stock (Mercedes interior). For an parts store, prefer your product in hand, workshop shot, or installed-on-car hero?"
+    },
+    {
+      "id": "home-featured-sku",
+      "status": "open",
+      "priority": "medium",
+      "page": "Home",
+      "href": "/#featured",
+      "question": "The featured tachometer block and product link are placeholders. What real part (if any) should we feature on the homepage at launch—or hide this block until then?"
+    },
+    {
+      "id": "home-coming-soon",
+      "status": "open",
+      "priority": "low",
+      "page": "Home",
+      "href": "/#upcoming",
+      "question": "The \"Upcoming Part (example title)\" tile and waitlist are placeholders—not something you're selling yet. Remove it, drop in a real part name when ready, or keep a generic coming-soon block?"
+    },
+    {
+      "id": "home-merch",
+      "status": "open",
+      "priority": "low",
+      "page": "Home",
+      "href": "/#merchandise",
+      "question": "The \"Ryloc Apparel\" homepage tile and sample merch SKU are placeholders. Sell merch at launch, or hide until you have real apparel listings?"
+    },
+    {
+      "id": "home-newsletter",
+      "status": "open",
+      "priority": "medium",
+      "page": "Home",
+      "href": "/#newsletter",
+      "question": "Are you planning to run an email list (e.g. new parts, restock updates) on the homepage \"Stay Connected\" section—or should we hide that block for now?"
+    },
+    {
+      "id": "trust-about",
+      "status": "open",
+      "priority": "medium",
+      "page": "About",
+      "href": "/about#story-review",
+      "question": "Our Story on About is draft/placeholder copy until you approve it. Send corrections in your voice, or should Grey Chair rewrite? Add credentials, years in business, or testimonials?"
+    },
+    {
+      "id": "about-workshop-photo",
+      "status": "open",
+      "priority": "medium",
+      "page": "About",
+      "href": "/about#story-review",
+      "question": "About photo is placeholder. Send workshop/packaging/QC photos—they increase conversion on specialty auto parts."
+    },
+    {
+      "id": "contact-support",
+      "status": "open",
+      "priority": "high",
+      "page": "Contact",
+      "href": "/contact#contact-review",
+      "question": "Pre-sale fitment questions drive sales. Is contact@rylocparts.com correct? Add phone, text, or hours for \"Will this fit my W124?\" support?"
+    },
+    {
+      "id": "contact-form-orders",
+      "status": "open",
+      "priority": "medium",
+      "page": "Contact",
+      "href": "/contact#contact-review",
+      "question": "Is a contact form necessary on the Contact page—or should we hide it for now?"
+    },
+    {
+      "id": "engineering-vs-shop",
+      "status": "open",
+      "priority": "medium",
+      "page": "Engineering",
+      "href": "/engineering",
+      "question": "Engineering services (custom PCB, reverse engineering) sit beside the parts shop. Keep as B2B lead-gen, or de-emphasize so the store is clearly \"buy parts here\"?"
+    },
+    {
+      "id": "engineering-form",
+      "status": "open",
+      "priority": "low",
+      "page": "Engineering",
+      "href": "/engineering#project-form-review",
+      "question": "Is the \"Start a Project\" engineering form needed on this page—or should we hide it for now?"
+    },
+    {
+      "id": "legal-ecommerce",
+      "status": "open",
+      "priority": "high",
+      "page": "Footer",
+      "href": "/",
+      "question": "Live stores need Privacy Policy, Terms of Sale, and often refund/shipping terms. Hide links until your attorney provides copy, or use Grey Chair starter templates?"
+    },
+    {
+      "id": "footer-dead-links",
+      "status": "open",
+      "priority": "medium",
+      "page": "Footer",
+      "href": "/",
+      "question": "Footer still has placeholder links (Core Exchange, Install Guides, Shipping & Returns). Which are required pages before the first real order?"
+    },
+    {
+      "id": "footer-social",
+      "status": "open",
+      "priority": "low",
+      "page": "Footer",
+      "href": "/",
+      "question": "Instagram + eBay in footer—correct URLs? Add YouTube for install content or other channels buyers use?"
+    },
+    {
+      "id": "form-notifications",
+      "status": "open",
+      "priority": "low",
+      "page": "Whole site",
+      "href": "/contact",
+      "question": "Order confirmations aside—once Contact/Engineering/Newsletter forms post to Make.com, anything else the scenarios should capture (e.g. page URL, form type) that we're not sending today?"
+    },
+    {
+      "id": "page-other-shop",
+      "status": "open",
+      "priority": "low",
+      "page": "Shop",
+      "href": "/parts",
+      "question": "Anything else for the parts shop (search, filters, bundles, gift cards, wholesale)?"
+    },
+    {
+      "id": "page-other-home",
+      "status": "open",
+      "priority": "low",
+      "page": "Home",
+      "href": "/",
+      "question": "Anything else for the store homepage?"
+    },
+    {
+      "id": "page-other-product",
+      "status": "open",
+      "priority": "low",
+      "page": "Product",
+      "href": "/product",
+      "question": "Anything else for product pages (reviews, Q&A, compare, related parts)?"
+    },
+    {
+      "id": "page-other-footer",
+      "status": "open",
+      "priority": "low",
+      "page": "Footer",
+      "href": "/",
+      "question": "Anything else before we turn on real checkout?"
+    }
+  ]
+}
